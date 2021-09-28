@@ -158,10 +158,10 @@ public class BinaryTreeMain {
             // Find the lowest value
             Node replacement = getReplacementNode(focusNode);
 
-            if (focusNode == root) {
+            if (focusNode == root)
                 root = replacement;
 
-            } else if (leftChild)
+            else if (leftChild)
                 parent.setLeftChild(replacement);
 
             else
