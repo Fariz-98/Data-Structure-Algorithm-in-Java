@@ -1,7 +1,7 @@
 package study.java.datastructure.algo.leetcode;
 
-//1732
-//Easy
+// 1732
+// Easy
 
 public class FindTheHighestAltitude {
 
