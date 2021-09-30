@@ -1,7 +1,7 @@
 package study.java.datastructure.algo.leetcode;
 
-// Easy
 // 1684
+// Easy
 
 import java.util.ArrayList;
 import java.util.Arrays;
