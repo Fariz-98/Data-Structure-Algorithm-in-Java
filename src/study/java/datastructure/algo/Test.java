@@ -1,29 +1,26 @@
 package study.java.datastructure.algo;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Test {
 
-    int size = 5;
-
-    int[] items = new int[5];
-
     public static void main(String[] args) {
 
-        Test test = new Test();
+        String allowed = "abc";
+        String[] words = {"a","b","c","ab","ac","bc","abc"};
 
-        test.items[0] = 1;
-        test.items[1] = 2;
-        test.items[2] = 3;
-        test.items[3] = 4;
-        test.items[4] = 5;
+        HashSet<Character> test = new HashSet<>();
+        HashSet<Character> allowedSet = new HashSet<>();
 
-        test.items[0] = test.items[--test.size];
+        for (int l = 0; l < allowed.length(); l++) {
+            allowedSet.add(allowed.charAt(l));
+        }
 
-        System.out.println(test.items[0]);
-        System.out.println(test.size);
+        for (int i = 0; i < words[4].length(); i++) {
+            test.add(words[4].charAt(i));
+        }
+
+        System.out.println(allowedSet.contains(words[4].charAt(1)));
 
     }
 
