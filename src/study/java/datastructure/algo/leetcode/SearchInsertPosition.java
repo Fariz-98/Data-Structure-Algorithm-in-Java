@@ -1,5 +1,8 @@
 package study.java.datastructure.algo.leetcode;
 
+// 35
+// Easy
+
 public class SearchInsertPosition {
 
     public static void main(String[] args) {
