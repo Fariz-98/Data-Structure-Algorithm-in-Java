@@ -1,5 +1,8 @@
 package study.java.datastructure.algo.leetcode;
 
+// 1455
+// Easy
+
 public class CheckIfAWordOccursAsAPrefixOfAnyWordInASentence {
 
     public static void main(String[] args) {
