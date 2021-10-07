@@ -1,11 +1,13 @@
 package study.java.datastructure.algo.leetcode;
 
+// 383
+// Easy
+
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Locale;
 
 public class RansomNote {
+
 
     public static void main(String[] args) {
         String ransomNote = "aaaabbbbcccc";
