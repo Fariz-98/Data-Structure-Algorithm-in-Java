@@ -137,7 +137,6 @@ public class MergeTwoSortedLists {
 
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
-                System.out.println("l1.val insert");
                 if (l1.next == null) {
                     current.val = l1.val;
                     current.next = new ListNode();
@@ -148,7 +147,6 @@ public class MergeTwoSortedLists {
                 current.val = l1.val;
                 l1 = l1.next;
             } else {
-                System.out.println("l2.val insert");
                 if (l2.next == null) {
                     current.val = l2.val;
                     current.next = new ListNode();
@@ -164,7 +162,6 @@ public class MergeTwoSortedLists {
         }
 
         if (l1 != null) {
-            System.out.println("l1 2nd insert");
             while (l1 != null) {
                 if (l1.next == null) {
                     current.val = l1.val;
@@ -176,7 +173,6 @@ public class MergeTwoSortedLists {
                 current = current.next;
             }
         } else if (l2 != null) {
-            System.out.println("l2 2nd insert");
             while (l2 != null) {
                 if (l2.next == null) {
                     current.val = l2.val;
