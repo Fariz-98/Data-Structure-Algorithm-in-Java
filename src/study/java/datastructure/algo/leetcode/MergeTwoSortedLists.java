@@ -12,18 +12,18 @@ public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
-        ListNode l1a = new ListNode(2);
-        ListNode l1b = new ListNode(4);
-        l1.next = l1a;
-        l1a.next = l1b;
+//        ListNode l1a = new ListNode(2);
+//        ListNode l1b = new ListNode(4);
+//        l1.next = l1a;
+//        l1a.next = l1b;
 
-        ListNode l2 = new ListNode(1);
-        ListNode l2a = new ListNode(3);
-        ListNode l2b = new ListNode(4);
-        l2.next = l2a;
-        l2a.next = l2b;
+        ListNode l2 = new ListNode(2);
+//        ListNode l2a = new ListNode(3);
+//        ListNode l2b = new ListNode(4);
+//        l2.next = l2a;
+//        l2a.next = l2b;
 
-        ListNode mergedList = mergeTwoListUsingList(l1, l2);
+        ListNode mergedList = mergeTwoListUsingListUsingVal(l1, l2);
         displayList(mergedList);
     }
 
@@ -124,6 +124,70 @@ public class MergeTwoSortedLists {
 
         }
 
+        return mergedList;
+    }
+
+    public static ListNode mergeTwoListUsingListUsingVal(ListNode l1, ListNode l2) {
+        if (l1 == null && l2 == null) {
+            return null;
+        }
+
+        ListNode mergedList = new ListNode();
+        ListNode current = mergedList;
+
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                System.out.println("l1.val insert");
+                if (l1.next == null) {
+                    current.val = l1.val;
+                    current.next = new ListNode();
+                    current = current.next;
+                    l1 = l1.next;
+                    break;
+                }
+                current.val = l1.val;
+                l1 = l1.next;
+            } else {
+                System.out.println("l2.val insert");
+                if (l2.next == null) {
+                    current.val = l2.val;
+                    current.next = new ListNode();
+                    current = current.next;
+                    l2 = l2.next;
+                    break;
+                }
+                current.val = l2.val;
+                l2 = l2.next;
+            }
+            current.next = new ListNode();
+            current = current.next;
+        }
+
+        if (l1 != null) {
+            System.out.println("l1 2nd insert");
+            while (l1 != null) {
+                if (l1.next == null) {
+                    current.val = l1.val;
+                    break;
+                }
+                current.val = l1.val;
+                l1 = l1.next;
+                current.next = new ListNode();
+                current = current.next;
+            }
+        } else if (l2 != null) {
+            System.out.println("l2 2nd insert");
+            while (l2 != null) {
+                if (l2.next == null) {
+                    current.val = l2.val;
+                    break;
+                }
+                current.val = l2.val;
+                l2 = l2.next;
+                current.next = new ListNode();
+                current = current.next;
+            }
+        }
         return mergedList;
     }
 
