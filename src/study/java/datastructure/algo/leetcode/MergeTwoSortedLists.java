@@ -42,7 +42,7 @@ public class MergeTwoSortedLists {
                 current = current.next;
             }
             return head.next;
-        } else if (l2 == null){
+        } else if (l2 == null) {
             while (l1 != null) {
                 current.next = l1;
                 l1 = l1.next;
@@ -79,6 +79,7 @@ public class MergeTwoSortedLists {
         return head.next;
     }
 }
+
 
 
 
