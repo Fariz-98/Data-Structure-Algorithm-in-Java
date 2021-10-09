@@ -3,6 +3,11 @@ package study.java.datastructure.algo.leetcode;
 // 21
 // Easy
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
@@ -18,7 +23,7 @@ public class MergeTwoSortedLists {
         l2.next = l2a;
         l2a.next = l2b;
 
-        ListNode mergedList = mergeTwoLists(l1, l2);
+        ListNode mergedList = mergeTwoListUsingList(l1, l2);
         displayList(mergedList);
     }
 
@@ -78,6 +83,50 @@ public class MergeTwoSortedLists {
 
         return head.next;
     }
+
+    public static ListNode mergeTwoListUsingList(ListNode l1, ListNode l2) {
+        if (l1 == null && l2 == null) {
+            return null;
+        }
+
+        List<Integer> numList = new ArrayList<>();
+        while (l1 != null) {
+            numList.add(l1.val);
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            numList.add(l2.val);
+            l2 = l2.next;
+        }
+        Collections.sort(numList);
+        Iterator<Integer> itr = numList.iterator();
+
+        ListNode mergedList = new ListNode();
+        ListNode current = mergedList;
+        boolean firstInsert = true;
+
+        while (itr.hasNext()) {
+            Integer next = itr.next();
+            if (!itr.hasNext()) { // If it's the last value
+                current.val = next;
+                break;
+            }
+            if (firstInsert) {
+                current.val = next;
+                current.next = new ListNode();
+                current = current.next;
+                firstInsert = false;
+            } else {
+                current.val = next;
+                current.next = new ListNode();
+                current = current.next;
+            }
+
+        }
+
+        return mergedList;
+    }
+
 }
 
 
