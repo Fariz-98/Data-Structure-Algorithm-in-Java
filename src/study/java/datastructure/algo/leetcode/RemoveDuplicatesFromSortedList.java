@@ -1,5 +1,8 @@
 package study.java.datastructure.algo.leetcode;
 
+// 83
+// Easy
+
 import study.java.datastructure.algo.leetcode.linkedlist.ListNode;
 
 public class RemoveDuplicatesFromSortedList {

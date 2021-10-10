@@ -1,5 +1,8 @@
 package study.java.datastructure.algo.leetcode;
 
+// 1979
+// Easy
+
 public class FindGreatestCommonDivisorOfArray {
 
     public static void main(String[] args) {
