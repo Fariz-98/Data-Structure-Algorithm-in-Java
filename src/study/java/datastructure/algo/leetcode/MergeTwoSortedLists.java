@@ -3,6 +3,8 @@ package study.java.datastructure.algo.leetcode;
 // 21
 // Easy
 
+import study.java.datastructure.algo.leetcode.linkedlist.ListNode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -189,23 +191,3 @@ public class MergeTwoSortedLists {
 
 }
 
-
-
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    public ListNode() {
-
-    }
-
-    public ListNode(int val) {
-        this.val = val;
-    }
-
-    public ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
