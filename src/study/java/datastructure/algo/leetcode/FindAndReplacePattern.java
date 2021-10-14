@@ -1,15 +1,40 @@
-package study.java.datastructure.algo;
+package study.java.datastructure.algo.leetcode;
+
+// 890
+// Medium
+// TODO: Optimize to run better & faster
+// This solution currently maps each character in a word to an integer value. For example, a = 1, b = 2, etc.
+// Even if the string starts with a different character, x = 1, z = 2, a = 3, etc.
+// The amount of time each character appears is stored in a variable which is then stored in a list.
+// So aabbcc will be 11-22-33 in the list.
+// Each word in the words array is converted and compared to the converted pattern.
+// This solution is very slow and takes a lot of memory.
 
 import java.util.*;
 
-public class Test {
+public class FindAndReplacePattern {
 
     public static void main(String[] args) {
-        String a = "abcdefghijklab";
-        String b = "abcdefghijkabl";
+        String[] words = {"abc", "deq", "mee", "aqq", "dkd", "ccc"};
+        String pattern = "abb";
 
-        System.out.println(Arrays.equals(buildPattern(a), buildPattern(b)));
+        for (String tempString : findAndReplacePattern(words, pattern))
+            System.out.println(tempString);
+    }
 
+    public static List<String> findAndReplacePattern(String[] words, String pattern) {
+        Integer[] patternNumber = buildPattern(pattern);
+        Integer[] wordNumber = null;
+        List<String> returnList = new ArrayList<>();
+
+        for (String tempString : words) {
+            wordNumber = buildPattern(tempString);
+
+            if (Arrays.equals(patternNumber, wordNumber))
+                returnList.add(tempString);
+        }
+
+        return returnList;
     }
 
     public static Integer[] buildPattern(String words) {
@@ -52,5 +77,3 @@ public class Test {
     }
 
 }
-
-
