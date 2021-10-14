@@ -1,4 +1,6 @@
-package study.java.datastructure.algo.leetcode.linkedlist;
+package study.java.datastructure.algo.leetcode.datastructure;
+
+// LinkedList
 
 public class ListNode {
 

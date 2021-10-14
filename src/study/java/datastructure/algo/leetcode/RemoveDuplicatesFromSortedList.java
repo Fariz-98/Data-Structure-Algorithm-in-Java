@@ -3,7 +3,7 @@ package study.java.datastructure.algo.leetcode;
 // 83
 // Easy
 
-import study.java.datastructure.algo.leetcode.linkedlist.ListNode;
+import study.java.datastructure.algo.leetcode.datastructure.ListNode;
 
 public class RemoveDuplicatesFromSortedList {
 

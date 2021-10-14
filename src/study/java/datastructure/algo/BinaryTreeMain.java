@@ -15,13 +15,7 @@ public class BinaryTreeMain {
         theTree.addNode(75, "Sales Manager");
         theTree.addNode(85, "Salesman 1");
 
-        theTree.preOrderTraversal(theTree.root);
-
-        System.out.println();
-
-        theTree.removeNode(75);
-
-        theTree.preOrderTraversal(theTree.root);
+        theTree.inOrderTraversal(theTree.root);
 //
 //        System.out.println(theTree.findNode(21));
     }

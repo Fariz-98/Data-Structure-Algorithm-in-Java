@@ -3,7 +3,7 @@ package study.java.datastructure.algo.leetcode;
 // 21
 // Easy
 
-import study.java.datastructure.algo.leetcode.linkedlist.ListNode;
+import study.java.datastructure.algo.leetcode.datastructure.ListNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
