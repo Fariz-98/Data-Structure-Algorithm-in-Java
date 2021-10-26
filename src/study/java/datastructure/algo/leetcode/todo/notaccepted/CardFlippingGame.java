@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.leetcode;
+package study.java.datastructure.algo.leetcode.todo.notaccepted;
 
 // 822
 // Medium
