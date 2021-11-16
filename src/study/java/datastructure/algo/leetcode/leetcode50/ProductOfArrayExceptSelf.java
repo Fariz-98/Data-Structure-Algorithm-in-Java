@@ -13,27 +13,51 @@ public class ProductOfArrayExceptSelf {
             System.out.println(tempInt);
     }
 
+    // Space complexity optimized
     public static int[] productExceptSelf(int[] nums) {
-        int[] product = new int[nums.length];
-        int[] passed = new int[nums.length];
-
-        int calculateAll = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            calculateAll *= nums[i];
-        }
-
-        product[0] = calculateAll;
-
-        int currentProduct = nums[0];
-        int j = 1;
+        int[] outputArray = new int[nums.length];
+        outputArray[0] = 1;
 
         for (int i = 1; i < nums.length; i++) {
-            product[j] = nums[i] * currentProduct;
-            currentProduct = nums[i];
-            j++;
+            outputArray[i] = nums[i - 1] * outputArray[i - 1];
         }
 
-        return product;
+        // Inout = R = 1 [1, 2, 3, 4] R = 1
+        // outputArr = [1, 1, 2, 6]
+        // Right product = [24, 12, 4, 1]
+
+        int rightProduct = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            outputArray[i] = outputArray[i] * rightProduct;
+            rightProduct = rightProduct * nums[i];
+        }
+
+        return outputArray;
+    }
+
+    public static int[] productExceptSelfa(int[] nums) {
+        int arrLength = nums.length;
+
+        int[] outputArr = new int[arrLength];
+        int[] leftProduct = new int[arrLength];
+        int[] rightProduct = new int[arrLength];
+
+        leftProduct[0] = 1;
+        rightProduct[arrLength - 1] = 1;
+
+        for (int i = 1; i < arrLength; i++) {
+            leftProduct[i] = nums[i - 1] * leftProduct[i - 1];
+        }
+
+        for (int i = arrLength - 2; i >= 0; i--) {
+            rightProduct[i] = nums[i + 1] * rightProduct[i + 1];
+        }
+
+        for (int i = 0; i < arrLength; i++) {
+            outputArr[i] = leftProduct[i] * rightProduct[i];
+        }
+
+        return outputArr;
     }
 
 }

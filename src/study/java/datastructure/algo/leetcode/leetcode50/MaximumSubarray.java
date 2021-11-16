@@ -2,7 +2,7 @@ package study.java.datastructure.algo.leetcode.leetcode50;
 
 // 53
 // Easy
-// TODO: Not accepted, solve using DP.
+// TODO: Not accepted, solve using Kadane's Algorithm.
 
 public class MaximumSubarray {
 
@@ -13,30 +13,15 @@ public class MaximumSubarray {
     }
 
     public static int maxSubArray(int[] nums) {
-        int iteration = 1;
-        int largestSum = Integer.MIN_VALUE;
+        int currentSum = nums[0];
+        int maxSum = currentSum;
 
-        while (iteration <= nums.length) {
-            int startIndex = 0;
-            int endIndex = iteration - 1;
-
-            while (endIndex <= nums.length - 1) {
-                int sum = 0;
-                for (int i = startIndex; i <= endIndex; i++) {
-                    sum += nums[i];
-                }
-
-                if (sum > largestSum) {
-                    largestSum = sum;
-                }
-
-                startIndex++;
-                endIndex++;
-            }
-
-            iteration++;
+        for (int i = 1; i < nums.length; i++) {
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+            maxSum = Math.max(maxSum, currentSum);
         }
-        return largestSum;
+
+        return maxSum;
     }
 
 }
