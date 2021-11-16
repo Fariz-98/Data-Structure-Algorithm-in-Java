@@ -3,8 +3,6 @@ package study.java.datastructure.algo.leetcode.leetcode50;
 // 238
 // Medium
 
-// TODO:
-
 public class ProductOfArrayExceptSelf {
 
     public static void main(String[] args) {

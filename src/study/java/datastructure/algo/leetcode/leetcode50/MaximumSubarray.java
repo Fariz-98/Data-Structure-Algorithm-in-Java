@@ -2,7 +2,6 @@ package study.java.datastructure.algo.leetcode.leetcode50;
 
 // 53
 // Easy
-// TODO: Not accepted, solve using Kadane's Algorithm.
 
 public class MaximumSubarray {
 
