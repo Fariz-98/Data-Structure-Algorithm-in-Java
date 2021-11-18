@@ -32,6 +32,7 @@ public class ValidAnagram {
         return charList;
     }
 
+    // Using map
     public static boolean isAnagramMap(String s, String t) {
         if (s.length() != t.length()) {
             return false;
