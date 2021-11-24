@@ -16,6 +16,26 @@ public class GroupAnagrams {
         }
     }
 
+    public static List<List<String>> groupAnagramsAlternative(String[] strs) {
+        Map<String, List<String>> wordMap = new HashMap<>();
+
+        for (int i = 0; i < strs.length; i++) {
+            char[] current = strs[i].toCharArray();
+            Arrays.sort(current);
+
+            if (!wordMap.containsKey(Arrays.toString(current))) {
+                List<String> newList = new ArrayList<>();
+                newList.add(strs[i]);
+                wordMap.put(Arrays.toString(current), newList);
+            } else if (wordMap.containsKey(Arrays.toString(current))) {
+                List<String> existingList = wordMap.get(Arrays.toString(current));
+                existingList.add(strs[i]);
+            }
+        }
+
+        return new ArrayList<>(wordMap.values());
+    }
+
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, ArrayList<Integer>> listMap = new HashMap<>();
 

@@ -50,14 +50,8 @@ public class ReverseLinkedList {
 
             prev = current;
             current = holder;
-            holder = current.next;
-
-            if (holder == null) {
-                current.next = prev;
-                break;
-            }
+            holder = holder.next;
         }
-        return current;
     }
 
 }
