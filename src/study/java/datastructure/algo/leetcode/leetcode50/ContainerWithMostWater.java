@@ -27,8 +27,8 @@ public class ContainerWithMostWater {
         return area;
     }
 
-    // This solution is also not quite as fast as it's supposed to, so finally, removed the leftptr value and rightptr val
-    // and just do every iteration normall, which turns out to be the optimal-ish solution.
+    // This solution is also not quite as fast as it's supposed to, so finally, I removed the leftptr value and rightptr val
+    // and just do every iteration normally, which turns out to be the optimal-ish solution.
     public static int maxAreaThirdSolution(int[] height) {
         int leftPointer = 0;
         int rightPointer = height.length - 1;
