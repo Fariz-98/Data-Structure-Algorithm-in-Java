@@ -15,7 +15,7 @@ public class RemoveNthNodeFromEndOfList {
         list3.next = list4;
         list4.next = list5;
 
-        ListNode deletedList = removeNthFromEnd(list1, 5);
+        ListNode deletedList = removeNthFromEndAlt(list1, 2);
         ListNode current = deletedList;
         while (current != null) {
             System.out.println(current.val);
@@ -23,44 +23,38 @@ public class RemoveNthNodeFromEndOfList {
         }
     }
 
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null || head.next == null) {
+    public static ListNode removeNthFromEndAlt(ListNode head, int n) {
+        if (head == null) {
             return head;
         }
 
-        // Have a toDelete, beforeDelete and current pointer
-        // the toDelete will move after n pass
-        // the beforeDelete will move after n + 1 pass (because we will change this.next to toDelete.next)
-        // the current will move first
+        if (head.next == null) {
+            return null;
+        }
 
-        ListNode toDelete = head;
+        // Have 2 pointer, current and beforeDelete
+        // the beforeDelete will move after n + 1 pass (because we will change this.next to this.next.next)
         ListNode beforeDelete = head;
         ListNode current = head;
         int pass = 0;
 
-        while (current != null) {
-            if (pass < n) {
-                // Check if it's deleting the first node
-                if (current.next == null) {
-                    ListNode next = head.next;
-                    head.next = null;
-                    return next;
-                }
+        while (true) {
+            // First node deletion
+            if (current == null && pass == n) {
+                return head.next;
+            } else if (current == null) { // After first node deletion
+                beforeDelete.next = beforeDelete.next.next;
+                return head;
+            }
+
+            if (pass <= n) {
                 current = current.next;
-                pass++;
-            } else if (pass == n) {
-                current = current.next;
-                toDelete = toDelete.next;
                 pass++;
             } else {
                 current = current.next;
-                toDelete = toDelete.next;
                 beforeDelete = beforeDelete.next;
             }
         }
-
-        beforeDelete.next = toDelete.next;
-        return head;
     }
 
 }
