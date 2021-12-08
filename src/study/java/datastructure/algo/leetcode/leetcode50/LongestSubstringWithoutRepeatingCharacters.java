@@ -27,7 +27,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
         int end = 0;
         Map<Character, Integer> charMap = new HashMap<>();
 
-
         while (end < s.length()) {
             charMap.put(s.charAt(end), charMap.getOrDefault(s.charAt(end), 0) + 1);
 
