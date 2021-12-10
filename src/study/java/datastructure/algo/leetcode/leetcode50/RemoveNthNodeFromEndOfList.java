@@ -11,19 +11,18 @@ public class RemoveNthNodeFromEndOfList {
         ListNode list4 = new ListNode(4);
         ListNode list5 = new ListNode(5);
         list1.next = list2;
-        list2.next = list3;
-        list3.next = list4;
-        list4.next = list5;
+//        list2.next = list3;
+//        list3.next = list4;
+//        list4.next = list5;
 
-        ListNode deletedList = removeNthFromEndAlt(list1, 2);
-        ListNode current = deletedList;
+        ListNode current = removeNthFromEnd(list1, 2);
         while (current != null) {
             System.out.println(current.val);
             current = current.next;
         }
     }
 
-    public static ListNode removeNthFromEndAlt(ListNode head, int n) {
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
             return head;
         }
@@ -38,15 +37,7 @@ public class RemoveNthNodeFromEndOfList {
         ListNode current = head;
         int pass = 0;
 
-        while (true) {
-            // First node deletion
-            if (current == null && pass == n) {
-                return head.next;
-            } else if (current == null) { // After first node deletion
-                beforeDelete.next = beforeDelete.next.next;
-                return head;
-            }
-
+        while (current != null) {
             if (pass <= n) {
                 current = current.next;
                 pass++;
@@ -54,6 +45,13 @@ public class RemoveNthNodeFromEndOfList {
                 current = current.next;
                 beforeDelete = beforeDelete.next;
             }
+        }
+
+        if (pass == n) {
+            return head.next;
+        } else {
+            beforeDelete.next = beforeDelete.next.next;
+            return head;
         }
     }
 

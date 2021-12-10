@@ -1,5 +1,8 @@
 package study.java.datastructure.algo.ds;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTreeMain {
 
     private Node root;
@@ -15,7 +18,7 @@ public class BinaryTreeMain {
         theTree.addNode(75, "Sales Manager");
         theTree.addNode(85, "Salesman 1");
 
-        theTree.inOrderTraversal(theTree.root);
+        theTree.preOrderTraversalDFS(theTree.root);
 //
 //        System.out.println(theTree.findNode(21));
     }
@@ -213,6 +216,33 @@ public class BinaryTreeMain {
 
         // This doesn't work when its immediately after the nodeToReplace because it would just point to itself
         return replacement;
+    }
+
+    public void preOrderTraversalDFS(Node focusNode) {
+        if (focusNode == null) {
+            return;
+        }
+        System.out.println(focusNode);
+        preOrderTraversalDFS(focusNode.getLeftChild());
+        preOrderTraversalDFS(focusNode.getRightChild());
+    }
+
+    public void levelOrderTraversalBFS(Node focusNode) {
+        Queue<Node> q = new LinkedList<>();
+        q.add(focusNode);
+
+        while (!q.isEmpty()) {
+            Node currentNode = q.remove();
+            System.out.println(currentNode);
+
+            if (currentNode.getLeftChild() != null) {
+                q.add(currentNode.getLeftChild());
+            }
+
+            if (currentNode.getRightChild() != null) {
+                q.add(currentNode.getRightChild());
+            }
+        }
     }
 
     public void inOrderTraversal(Node focusNode) {

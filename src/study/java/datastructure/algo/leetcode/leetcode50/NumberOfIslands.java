@@ -3,11 +3,6 @@ package study.java.datastructure.algo.leetcode.leetcode50;
 // 200
 // Medium
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
-
 public class NumberOfIslands {
 
     public static void main(String[] args) {
