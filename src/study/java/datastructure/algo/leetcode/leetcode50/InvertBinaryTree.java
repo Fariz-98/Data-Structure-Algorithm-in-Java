@@ -15,6 +15,10 @@ public class InvertBinaryTree {
     }
 
     public static TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
 
@@ -27,8 +31,10 @@ public class InvertBinaryTree {
                 curr.right = tempNode;
             } else if (curr.left == null && curr.right != null) {
                 curr.left = curr.right;
+                curr.right = null;
             } else if (curr.right == null && curr.left != null) {
                 curr.right = curr.left;
+                curr.left = null;
             }
 
             if (curr.left != null) {
