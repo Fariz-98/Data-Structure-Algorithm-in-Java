@@ -2,6 +2,9 @@ package study.java.datastructure.algo.leetcode.leetcode50;
 
 import study.java.datastructure.algo.leetcode.datastructure.ListNode;
 
+// 19
+// Medium
+
 public class RemoveNthNodeFromEndOfList {
 
     public static void main(String[] args) {

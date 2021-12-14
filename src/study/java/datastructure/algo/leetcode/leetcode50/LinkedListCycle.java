@@ -5,6 +5,9 @@ import study.java.datastructure.algo.leetcode.datastructure.ListNode;
 import java.util.HashSet;
 import java.util.Set;
 
+// 141
+// Easy
+
 public class LinkedListCycle {
 
     public static void main(String[] args) {
