@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.leetcode.todo.optimize;
+package study.java.datastructure.algo.leetcode;
 
 // 890
 // Medium
