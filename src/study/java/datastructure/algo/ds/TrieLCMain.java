@@ -6,13 +6,11 @@ public class TrieLCMain {
 
     public static void main(String[] args) {
         Trie trie = new Trie();
-        trie.insert("bad");
-        trie.insert("dad");
-        trie.insert("mad");
-        System.out.println(trie.search("pad"));
-        System.out.println(trie.search("bad"));
-        System.out.println(trie.search("mad"));
-        System.out.println(trie.search("lol"));
+        trie.insert("abc");
+        System.out.println(trie.search("a"));
+        System.out.println(trie.search("abc"));
+        System.out.println(trie.search("bc"));
+        System.out.println(trie.search("d"));
     }
 
 }
