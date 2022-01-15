@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.xtremax;
+package study.java.datastructure.algo.interview.xtremax;
 
 import java.util.ArrayList;
 import java.util.List;

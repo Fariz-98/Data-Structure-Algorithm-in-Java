@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.guidewire.codility;
+package study.java.datastructure.algo.interview.guidewire.codility;
 
 import java.util.HashMap;
 import java.util.Map;

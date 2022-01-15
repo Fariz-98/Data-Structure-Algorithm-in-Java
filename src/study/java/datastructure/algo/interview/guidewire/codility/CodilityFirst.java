@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.guidewire.codility;
+package study.java.datastructure.algo.interview.guidewire.codility;
 
 public class CodilityFirst {
 

@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.xtremax;
+package study.java.datastructure.algo.interview.xtremax;
 
 public class first {
 
