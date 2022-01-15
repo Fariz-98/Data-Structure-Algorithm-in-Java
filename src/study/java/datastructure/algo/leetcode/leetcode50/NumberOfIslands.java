@@ -23,7 +23,7 @@ public class NumberOfIslands {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == '1') {
                     island++;
-                    BFS(grid, i, j);
+                    DFS(grid, i, j);
                 }
             }
         }
@@ -31,7 +31,7 @@ public class NumberOfIslands {
         return island;
     }
 
-    public static void BFS(char[][] grid, int i, int j) {
+    public static void DFS(char[][] grid, int i, int j) {
         // Recursive implementation
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[i].length || grid[i][j] == '0') {
             return;
@@ -41,13 +41,13 @@ public class NumberOfIslands {
         grid[i][j] = '0';
 
         // Up
-        BFS(grid, i - 1, j);
+        DFS(grid, i - 1, j);
         // Down
-        BFS(grid, i + 1, j);
+        DFS(grid, i + 1, j);
         // Left
-        BFS(grid, i, j - 1);
+        DFS(grid, i, j - 1);
         // Right
-        BFS(grid, i, j + 1);
+        DFS(grid, i, j + 1);
     }
 
 }

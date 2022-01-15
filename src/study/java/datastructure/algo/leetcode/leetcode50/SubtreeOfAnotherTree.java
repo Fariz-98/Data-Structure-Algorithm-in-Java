@@ -5,48 +5,38 @@ package study.java.datastructure.algo.leetcode.leetcode50;
 
 import study.java.datastructure.algo.leetcode.datastructure.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SubtreeOfAnotherTree {
-
-    public boolean hasSubTree = false;
 
     public static void main(String[] args) {
 
     }
 
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        dfs(root, subRoot);
-        return hasSubTree;
+        if (subRoot == null) {
+            return true;
+        }
+
+        if (root == null && subRoot != null) {
+            return false;
+        }
+
+        if (isSame(root, subRoot)) {
+            return true;
+        }
+
+        return (isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot));
     }
 
-    public void dfs(TreeNode root, TreeNode subRoot) {
-        if ((root == null && subRoot != null) || (root != null && subRoot == null)) {
-            hasSubTree = false;
-            return;
-        } else if (root == null && subRoot == null) {
-            return;
+    public boolean isSame(TreeNode root, TreeNode subRoot) {
+        if (root == null && subRoot == null) {
+            return true;
         }
 
-        if (root.val == subRoot.val) {
-            hasSubTree = true;
-            dfs(root.left, subRoot.left);
-
-            if (hasSubTree) {
-                dfs(root.right, subRoot.right);
-            }
-        } else {
-            hasSubTree = false;
+        if (root != null && subRoot != null && (root.val == subRoot.val)) {
+            return (isSame(root.left, subRoot.left) && isSame(root.right, subRoot.right));
         }
 
-        if (!hasSubTree) {
-            dfs(root.left, subRoot);
-        }
-
-        if (!hasSubTree) {
-            dfs(root.right, subRoot);
-        }
+        return false;
     }
 
 }

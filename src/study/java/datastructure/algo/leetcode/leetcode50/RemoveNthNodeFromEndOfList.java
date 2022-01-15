@@ -27,7 +27,7 @@ public class RemoveNthNodeFromEndOfList {
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
-            return head;
+            return null;
         }
 
         if (head.next == null) {
