@@ -1,0 +1,53 @@
+/**
+ * Palindrome
+ *
+ * Palindrome is a word, phrase, or sequence that reads the same backward as forward
+ * e.g. "madam", "nurses run", "23499432". When palindrome sequence is splitted in half,
+ * the first sequence may be a palindrome too.
+ *
+ * "Palindrome Level" is how many times a palindrome sequence can be splitted in half
+ * until the first sequence from splitted is not a palindrome or
+ * until the first sequence is just a character. Palindrome level IGNORES SPACE AND CASE INSENSITIVE.
+ * (if the sequence length is odd number, then after split the sequence,
+ * take the middle character to the first sequence: "madam" -> "mad")
+ *
+ * For example:
+ * - nurses run: nursesrun -> nurse (1 level)
+ * - 451545154: 451545154 -> 45154 -> 451 (2 level)
+ * - dam madam mad: dammadammad -> dammad -> dam (2 level)
+ *
+ * Defined "String's Prefixes" as all prefixes of a string.
+ *
+ * For example:
+ * - abacaba: a, ab, aba, abac, abaca, abacab, abacaba
+ * - nun in inun: n, nu, nun, nunin, nunini, nuninin, nunininu, nunininun
+ *
+ * "Sum of the Palindrome Level" of all string's prefixes is calculated by
+ * add all palindrome level of all prefixes of a string.
+ *
+ * For example:
+ * - abacaba: a (0), ab (0), aba (1), abac(0), abaca(0), abacab(0), abacaba(1)
+ * => sum of palindrome level: 2
+ *
+ * ================================ ATTENTION PLEASE ================================
+ *
+ * Your ONLY task is to implement the following two methods:
+ * 1. calculatePalindromeLevel
+ * 2. sumOfPalindromeLevel
+ *
+ * You are ALLOWED to
+ * 1. Add new method(s) in this file.
+ * 2. Add additional test case(s) in Main.
+ *
+ * You are NOT ALLOWED to
+ * 1. Add any new method in other files.
+ * 2. Change signature of any existing methods.
+ * Method signature includes
+ * - method's name
+ * - return type
+ * - number of parameters
+ * - parameters' type
+ * - access modifier
+ *
+ * --- Please make sure your code is error-free when built.
+ */

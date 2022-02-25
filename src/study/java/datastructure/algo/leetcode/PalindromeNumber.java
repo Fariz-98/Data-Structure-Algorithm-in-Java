@@ -6,21 +6,21 @@ package study.java.datastructure.algo.leetcode;
 public class PalindromeNumber {
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome(122222221));
+        System.out.println(isPalindrome(-121));
     }
 
     public static boolean isPalindrome(int x) {
-        if (x < 0)
-            return false;
+        String number = String.valueOf(x);
+        int i = number.length() - 1;
+        int j = 0;
 
-        String theNumber = String.valueOf(x);
-
-        int j = theNumber.length() - 1;
-
-        for (int i = 0; i < theNumber.length(); i++) {
-            if (theNumber.charAt(i) != theNumber.charAt(j))
+        while (j < i) {
+            if (number.charAt(i) != number.charAt(j)) {
                 return false;
-            j--;
+            }
+
+            i--;
+            j++;
         }
 
         return true;

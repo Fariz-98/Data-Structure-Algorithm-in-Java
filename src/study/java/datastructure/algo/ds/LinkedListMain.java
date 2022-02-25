@@ -5,24 +5,37 @@ public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList theLinkedList = new LinkedList();
 
-//        theLinkedList.insertFirstLink(new Link("Don Quixote", 500));
-//        theLinkedList.insertFirstLink(new Link("A Tale of Two Cities", 200));
-//        theLinkedList.insertFirstLink(new Link("The Lord of the Rings", 150));
-//        theLinkedList.insertFirstLink(new Link("Harry Potter and the Sorcerer's Stone", 107));
-//
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+        theLinkedList.insert(new Link("Don Quixote", 500));
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+        theLinkedList.insert(new Link("A Tale of Two Cities", 200));
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+        theLinkedList.insert(new Link("Harry Potter and the Sorcerer's Stone", 107));
+
 //        theLinkedList.removeFirst();
-//
+
 //        System.out.println(theLinkedList.find("The Lord of the Rings").bookName + " Was Found");
-//
+
 //        theLinkedList.removeLink("The Lord of the Rings");
-//
+
 //        theLinkedList.displayAll();
 
         theLinkedList.insert(new Link("Sherlock Holmes", 1000));
 
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+
         theLinkedList.insert(new Link("Book name", 10));
 
+        theLinkedList.insert(new Link("The Lord of the Rings", 150));
+
+        theLinkedList.removeAll("The Lord of the Rings");
+
         theLinkedList.displayAll();
+
+        System.out.println(theLinkedList.size);
+//        theLinkedList.displayAll();
     }
 }
 
@@ -51,6 +64,7 @@ class Link {
 class LinkedList {
 
     public Link firstLink;
+    public int size;
 
     LinkedList() {
         firstLink = null;
@@ -72,6 +86,7 @@ class LinkedList {
         } else {
             firstLink = newLink;
         }
+        size++;
     }
 
     public void insert(Link newLink) {
@@ -88,6 +103,8 @@ class LinkedList {
             current = newLink;
             previous.next = current;
         }
+
+        size++;
     }
 
     public Link removeFirst() {
@@ -100,6 +117,7 @@ class LinkedList {
             firstLink = firstLink.next;
         }
 
+        size--;
         return linkRef;
     }
 
@@ -163,6 +181,34 @@ class LinkedList {
                 System.out.println(currentLink.bookName + " Removed");
             }
         }
+    }
+
+    public boolean removeAll(String bookName) {
+        boolean flag = false;
+        Link curr = firstLink;
+        Link prev = firstLink;
+
+        while (curr != null) {
+            if (curr.bookName.equals(bookName)) {
+                size--;
+                flag = true;
+
+                if (curr == firstLink) {
+                    firstLink = firstLink.next;
+                    curr = firstLink;
+                    prev = firstLink;
+                    continue;
+                }
+
+                prev.next = curr.next;
+                curr = curr.next;
+            } else {
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+
+        return flag;
     }
 
 }

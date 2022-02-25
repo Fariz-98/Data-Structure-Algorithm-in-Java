@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.leetcode;
+package study.java.datastructure.algo.leetcode.leetcode50;
 
 // 5
 // Medium

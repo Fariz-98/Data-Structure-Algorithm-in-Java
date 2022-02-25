@@ -20,7 +20,6 @@ public class CourseSchedule {
         for (int[] tempArr : prerequisites) {
             List<Integer> preReqList = graphMap.get(tempArr[0]);
             preReqList.add(tempArr[1]);
-            graphMap.put(tempArr[0], preReqList);
         }
 
         Set<Integer> visited = new HashSet<>();

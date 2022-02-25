@@ -1,0 +1,99 @@
+/**
+ * Buy Game
+ *
+ * Next month, a popular game company will release new LAN multiplayer game in XCity.
+ * A group of student from XHighschool want to buy the new game.
+ *
+ * A student CAN buy the game if their available money is enough to buy the game.
+ *
+ * Because the game is LAN multiplayer game, a student MAY buy the game
+ * if he CAN buy the game and at least 2 of his/her friends CAN buy the game,
+ * REGARDLESS those 2 friends MAY buy the game or not.
+ *
+ * A student do not consider other student as friend if not exist in his/her friend list.
+ *
+ * ================================ ATTENTION PLEASE ================================
+ *
+ * Your ONLY task is to implement the following two methods:
+ * 1. getListBuyers
+ * 2. getListPromoBuyers
+ *
+ * You are ALLOWED to
+ * 1. Add new method(s) in this file.
+ * 2. Add additional test case(s) in Main.
+ *
+ * You are NOT ALLOWED to
+ * 1. Add any new method in other files.
+ * 2. Change signature of any existing methods.
+ * Method signature includes
+ * - method's name
+ * - return type
+ * - number of parameters
+ * - parameters' type
+ * - access modifier
+ *
+ * --- Please make sure your code is error-free when built.
+ */
+
+ /**
+      * GetListPromoBuyers
+      *
+      * In this case, there is a promo: "Buying 2 game with paying half price for the second game."
+      * A student that can buy with full price will invite his/her friend that:
+      * - have the fewest money
+      * - cannot buy the game with full price
+      * - can buy the game with half price
+      * - not yet invited to buy the game with promo price by other student
+      * to buy the second game with half price.
+      *
+      * List of student that given already ordered by who will invite other friend to buy promo,
+      * earlier to later.
+      *
+      * Return list of student that may buy the game with promo.
+      * List of student (not null) and game price are given.
+      * Note: A student may buy the game if at least 2 of his/her friends can buy the game)
+      */
+
+
+
+
+
+
+
+
+
+
+      List<Student> students = new ArrayList<>();
+
+              Student studentA = new Student("Student A", 3500);
+              Student studentB = new Student("Student B", 9800);
+              Student studentC = new Student("Student C", 7700);
+              Student studentD = new Student("Student D", 2000);
+              Student studentE = new Student("Student E", 700);
+              Student studentF = new Student("Student F", 6900);
+              Student studentG = new Student("Student G", 7100);
+              Student studentH = new Student("Student H", 5200);
+              Student studentI = new Student("Student I", 4100);
+              Student studentJ = new Student("Student J", 7300);
+
+              studentA.setFriends(Arrays.asList(studentD, studentF, studentG, studentH, studentJ));
+              studentB.setFriends(Arrays.asList(studentE, studentG));
+              studentC.setFriends(Arrays.asList(studentB, studentD, studentG, studentH));
+              studentD.setFriends(Arrays.asList(studentC, studentF, studentG, studentH, studentI, studentJ));
+              studentE.setFriends(Arrays.asList(studentC, studentD, studentF, studentJ));
+              studentF.setFriends(Arrays.asList(studentA, studentC, studentD, studentE, studentG, studentJ));
+              studentG.setFriends(Arrays.asList(studentA, studentB, studentC));
+              studentH.setFriends(Arrays.asList(studentA, studentF, studentG, studentI, studentJ));
+              studentI.setFriends(Arrays.asList(studentA, studentB, studentD, studentG, studentH));
+              studentJ.setFriends(Arrays.asList(studentA, studentB, studentE, studentF, studentH, studentI));
+
+              students.add(studentA);
+              students.add(studentB);
+              students.add(studentC);
+              students.add(studentD);
+              students.add(studentE);
+              students.add(studentF);
+              students.add(studentG);
+              students.add(studentH);
+              students.add(studentI);
+              students.add(studentJ);

@@ -1,4 +1,4 @@
-package study.java.datastructure.algo.leetcode.todo;
+package study.java.datastructure.algo.leetcode.todo.notaccepted;
 
 // 1089
 // Easy

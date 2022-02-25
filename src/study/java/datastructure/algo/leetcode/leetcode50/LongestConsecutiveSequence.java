@@ -21,7 +21,8 @@ public class LongestConsecutiveSequence {
             return 0;
         }
 
-        int res = 0;
+        // Initially 1 because there will always be at least 1 consecutive number
+        int res = 1;
 
         Set<Integer> set = new HashSet<>();
         for (int tempInt : nums) {

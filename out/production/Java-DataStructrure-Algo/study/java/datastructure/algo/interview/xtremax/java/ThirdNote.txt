@@ -1,0 +1,83 @@
+/**
+ * Less Than Coloring
+ *
+ * Given a graph where each Node has property called Power and Color.
+ * Each node can only colors its neighbours if it has equal or greater Power than them.
+ * Each node will color the neighbours after they are completely colored.
+ * The coloring process for each node will occur concurrently and takes 1 day.
+ *
+ * ================================ ATTENTION PLEASE ================================
+ *
+ * Your ONLY task is to implement the following two methods:
+ * 1. findMinimumDays
+ * 2. findMostColor
+ *
+ * You are ALLOWED to
+ * 1. Add new method(s) in this file.
+ * 2. Add additional test case(s) in Main.
+ *
+ * You are NOT ALLOWED to
+ * 1. Add any new method in other files.
+ * 2. Change signature of any existing methods.
+ *    Method signature includes
+ *    - method's name
+ *    - return type
+ *    - number of parameters
+ *    - parameters' type
+ *    - access modifier
+ *
+ * --- Please make sure your code is error-free when built.
+ *
+ * Note: Do not count the time needed for coloring the starting node
+ */
+
+ /**
+      * Find Minimum Days
+      *
+      * Return minimum days required to color entire graph.
+      * Return 0 if graph cannot colored entirely.
+      *
+      * Example (See GraphA.png):
+      * start node: Node A
+      * output: 3 days
+      * explanation:
+      * <pre>
+      *  day 1, A colors B, E, H
+      *  day 2, B colors C, F
+      *         E colors I
+      *         H colors K
+      *  day 3, C colors D
+      *         F colors G, I
+      *         I colors J
+      * </pre>
+      */
+
+
+      /**
+           * If we color 2 nodes at the same time then the color will spread for a certain period of time, find which color colored the most nodes.
+           * Rule:
+           * - Blank + Red = Red
+           * - Red + Red = Red
+           * - Blank + Blue = Blue
+           * - Blue + Blue = Blue
+           * - Red + Blue = Mixed (applies vice versa)
+           * - Mixed + Red = Mixed (applies vice versa)
+           * - Mixed + Blue = Mixed (applies vice versa)
+           *
+           * Example (See GraphB.png):
+           * node 1: node A (Red)
+           * node 2: node Z (Blue)
+           * coloring duration: 2
+           * output: Red
+           * explanation:
+           * <pre>
+           *  day 1, A colors B, C, D
+           *         Z colors Q, Y
+           *  day 2, B colors F, G
+           *         C colors G, I
+           *         Q colors P
+           *         Y colors X
+           *  result: Red = 7 (A, B, C, D, F, G, I)
+           *          Blue = 5 (P, Q, X, Y, Z)
+           * </pre>
+           */

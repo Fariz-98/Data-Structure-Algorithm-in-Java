@@ -1,17 +1,20 @@
 package study.java.datastructure.algo;
 
-import java.util.*;
+import java.util.function.Supplier;
 
 public class Test {
 
     public static void main(String[] args) {
-        PriorityQueue<Integer> testQ = new PriorityQueue<>();
-        testQ.add(5);
-        testQ.add(3);
-        testQ.add(7);
-        testQ.add(2);
 
-        System.out.println(testQ.peek());
+        Supplier<Integer> supplier = () -> 10;
+        Supplier<Integer> supplier1 = new Supplier<Integer>() {
+            @Override
+            public Integer get() {
+                return 10;
+            }
+        };
+
+        System.out.println(supplier.get());
     }
 
 }
